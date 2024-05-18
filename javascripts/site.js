@@ -4,7 +4,7 @@ function logar(){
 
     if(login == 'admin' && senha == '1234'){
         alert('Usuario Logado com Sucesso!');
-        location.href = '/home';
+        location.href= 'home.html';
     }else{
         alert('Usuarios ou senha incorretas');
     }
