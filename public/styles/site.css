@@ -1,0 +1,56 @@
+body {
+    font-family: Arial;
+    /*background-image: url("./Dashboard\ Login.jpg");*/
+    background-image: linear-gradient(45deg, rgb(29, 29, 223), hsl(207, 100%, 50%));
+}
+.Tela-login  {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 60px;
+    border-radius: 15px;
+    color: white;
+}
+.Tela-login h2{
+    margin-bottom: 7px;
+}
+
+.login_inputs{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.login_inputs h2{
+    margin-bottom: 20px;
+}
+
+.login_inputs input{
+    padding: 15px;
+    outline: none;
+    border-radius: 25px;
+    border-style: none;
+    margin-bottom: 20px;
+
+}
+button {
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 15px;
+    width: 100%;
+    color: white;
+    font-size: 15px;
+    padding: 15px;
+
+}
+button:hover{
+    background-color: rgb(3, 36, 184);
+}
+img {
+    width:190px;
+    height: 150px;
+}  
+
