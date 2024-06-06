@@ -1,5 +1,5 @@
 // server.js
-const {setup} = require('./banco')
+const {setup, removeAllData, createTestData, retrieveAllDataInfo} = require('./banco')
 const express = require('express');
 const path = require("path")
 const app = express();
@@ -10,9 +10,10 @@ app.use(express.static('public'));
 
 
 // Endpoint de exemplo
-app.get('/api/data', (req, res) => {
-  setup()
-  res.json({ message: 'Hello from server-side!' });
+app.get('/api/data', async (req, res) => {
+  //res.json({ message: 'Hello from server-side!' });
+  resultado = await retrieveAllDataInfo()
+  res.json(resultado)
 });
 
 app.get('/', (req, res) => {
@@ -20,7 +21,10 @@ app.get('/', (req, res) => {
 });
 
 function startServer() {
-  app.listen(port, () => {
+  app.listen(port, async () => {
+      await setup()
+      await removeAllData()
+      await createTestData()
       console.log(`Server listening at http://localhost:${port}`);
   });
 }

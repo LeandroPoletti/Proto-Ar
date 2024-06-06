@@ -8,7 +8,7 @@ async function iniciarBanco() {
         await sql `
     CREATE TABLE IF NOT EXISTS lote (
         id SERIAL NOT NULL PRIMARY KEY,
-        ultima_manutencao DATE
+        ultima_manutencao DATE DEFAULT CURRENTDATE
     ); `
     await sql`
 
@@ -21,7 +21,7 @@ async function iniciarBanco() {
     await sql`
     CREATE TABLE IF NOT EXISTS eventos (
         id SERIAL NOT NULL PRIMARY KEY,
-        horario TIMESTAMP,
+        horario TIMESTAMP DEFAULT LOCALTIMESTAMP,
         dispositivo_id INT NOT NULL REFERENCES dispositivos(id)
     );
 `
@@ -29,7 +29,6 @@ async function iniciarBanco() {
     } catch (error) {
         console.error('Error creating tables:', error);
     } finally {
-        await sql.end();
     }
 }
 
@@ -57,18 +56,34 @@ async function populateTables(){
         return true
     }
 }
-/* 
-select * from eventos 
-	inner join dispositivos on 
-	eventos.dispositivo_id = dispositivos.id
-	inner join lote on
-	dispositivos.lote_id = lote.id;
-*/
+ 
+
+async function retrieveAllDataInfo() {
+    try {
+        resultado = await sql `
+        select evnt.id AS id_evento, evnt.horario AS horario_evento, dev.id AS id_dispositivo,
+        dev.nome AS nome_dispositivo, lote.id AS id_lote,
+        lote.ultima_manutencao AS ultima_manutencao_lote 
+          from eventos evnt
+	        inner join dispositivos AS dev on 
+	            evnt.dispositivo_id = dev.id
+	        inner join lote on
+    	        dev.lote_id = lote.id;
+        
+        `
+    } catch (error) {
+        console.log("Erro ao consultar tabelas: " + error)
+    }
+
+    return resultado
+    
+}
 
 
 
 module.exports = {
     setup: iniciarBanco,
     createTestData: populateTables,
-    removeAllData: clearAllValues
+    removeAllData: clearAllValues,
+    retrieveAllDataInfo
 }
