@@ -1,5 +1,5 @@
 // server.js
-const {executar} = require('./banco')
+const {setup} = require('./banco')
 const express = require('express');
 const path = require("path")
 const app = express();
@@ -11,7 +11,7 @@ app.use(express.static('public'));
 
 // Endpoint de exemplo
 app.get('/api/data', (req, res) => {
-  executar()
+  setup()
   res.json({ message: 'Hello from server-side!' });
 });
 
