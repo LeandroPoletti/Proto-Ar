@@ -63,11 +63,12 @@ select * from eventos
 	eventos.dispositivo_id = dispositivos.id
 	inner join lote on
 	dispositivos.lote_id = lote.id;
-
 */
 
 
 
 module.exports = {
-    setup: iniciarBanco
+    setup: iniciarBanco,
+    createTestData: populateTables,
+    removeAllData: clearAllValues
 }
