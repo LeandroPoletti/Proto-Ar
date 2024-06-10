@@ -16,6 +16,12 @@ app.get('/api/data', async (req, res) => {
   res.json(resultado)
 });
 
+app.post('/api/insert', async (req, res) => {
+  
+  res.json(req.body)
+})
+
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'home.html'));''
 });
