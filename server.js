@@ -1,5 +1,5 @@
 // server.js
-const {setup, removeAllData, createTestData, retrieveAllDataInfo} = require('./banco')
+const {setup, removeAllData, createTestData, retrieveAllDataInfo, insertData} = require('./banco')
 const express = require('express');
 const path = require("path")
 const app = express();
@@ -17,8 +17,8 @@ app.get('/api/data', async (req, res) => {
 });
 
 app.post('/api/insert', async (req, res) => {
-  
-  res.json(req.body)
+  let succcess = await insertData(req.body)
+  res.json(succcess)
 })
 
 

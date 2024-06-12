@@ -32,6 +32,17 @@ async function iniciarBanco() {
     }
 }
 
+async function insertData(dados){
+    try{
+        await sql `INSERT INTO eventos(dispositivo_id, horario) values (${dados.id_device}, localtimestamp);`
+    }catch (error){
+        console.log("Erro ao limpar tabelas " + error)
+        return false
+    }finally{
+        return true
+    }
+}
+
 async function clearAllValues() {
     try{
         await sql `TRUNCATE lote, dispositivos, eventos RESTART IDENTITY cascade;`
@@ -48,7 +59,7 @@ async function populateTables(){
          
         await sql `insert into lote (ultima_manutencao) values (CURRENT_DATE), (to_date('2024-01-06', 'YYYY-MM-DD'));`
         await sql `insert into dispositivos (nome, lote_id) values ('Dispositvo teste 1',2), ('Dispositvo teste 2',1);`
-        await sql `insert into eventos (horario, dispositivo_id) values (LOCALTIMESTAMP(2),2), (make_timestamp(2013, 7, 15, 8, 15, 23.5),1);`
+        await sql `insert into eventos (horario, dispositivo_id) values (LOCALTIMESTAMP(2),2), (make_timestamp(2013, 7, 15, 8, 15, 23.5),2);`
     }catch (error){
         console.log("Erro ao popular tabelas " + error)
         return false
@@ -85,5 +96,6 @@ module.exports = {
     setup: iniciarBanco,
     createTestData: populateTables,
     removeAllData: clearAllValues,
-    retrieveAllDataInfo
+    retrieveAllDataInfo,
+    insertData
 }

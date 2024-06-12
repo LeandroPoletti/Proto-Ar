@@ -26,7 +26,7 @@
     </div>
     <div class="selectors-row">
       <div class="resumo">
-        <div class="col-sm-4 pt-5">
+        <!-- <div class="col-sm-4 pt-5">
           <div class="card border-primary-subtle ">
             <div class="card-title">
               <h1>Lotes</h1>
@@ -39,7 +39,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div> -->
         <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
       </div>
       
@@ -64,30 +64,6 @@
     </table>
   </div>
   
-
-  <script>
-    var xValues = ["ID + Problema", "Dia bom", "Dia ruim", "Roupa com problema", "dia com mais reparo"];
-    var yValues = [55, 49, 44, 30, 24, 15];
-    var barColors = ["red", "green","orange","blue","brown"];
-    
-    new Chart("myChart", {
-      type: "bar",
-      data: {
-        labels: xValues,
-        datasets: [{
-          backgroundColor: barColors,
-          data: yValues
-        }]
-      },
-      options: {
-        legend: {display: false},
-        title: {
-          display: true,
-          text: "Gráfico Geral"
-        }
-      }
-    });
-    </script>
   
 </body>
 </html>
