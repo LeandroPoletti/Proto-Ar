@@ -33,7 +33,9 @@
               <ul class="list-group list-group- flush">
                 <ol class="list-group-item list-group-item-action"><label class="container-fluid" for="1"> ID xy mais problemas </label></ol>
                 <ol class="list-group-item list-group-item-action"><label class="container-fluid" for="1"> DATA xy foi dia mais tranquilo</label></ol>
+                <ol class="list-group-item list-group-item-action"><label class="container-fluid" for="1"> DATA xy foi dia ruim</label></ol>
                 <ol class="list-group-item list-group-item-action"><label class="container-fluid" for="1">roupa xy com mais  problema</label></ol>
+                <ol class="list-group-item list-group-item-action"><label class="container-fluid" for="1">dia xy com mais reparo </label></ol>
               </ul>
             </div>
           </div>
@@ -64,9 +66,9 @@
   
 
   <script>
-    var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-    var yValues = [55, 49, 44, 24, 15];
-    var barColors = ["red", "green","blue","orange","brown"];
+    var xValues = ["ID + Problema", "Dia bom", "Dia ruim", "Roupa com problema", "dia com mais reparo"];
+    var yValues = [55, 49, 44, 30, 24, 15];
+    var barColors = ["red", "green","orange","blue","brown"];
     
     new Chart("myChart", {
       type: "bar",
@@ -81,7 +83,7 @@
         legend: {display: false},
         title: {
           display: true,
-          text: "World Wine Production 2018"
+          text: "Gráfico Geral"
         }
       }
     });
