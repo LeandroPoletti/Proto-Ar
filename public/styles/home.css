@@ -1,10 +1,13 @@
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: Arial;
     /*background-image: url("./Dashboard\ Login.jpg");*/
-    /* background-image: linear-gradient(45deg, rgb(29, 29, 223), hsl(207, 100%, 50%)); */
-    
+    background-color: rgb(243, 242, 240);
 }
 
 h3 {
@@ -13,8 +16,6 @@ h3 {
     margin-left: 31%;
     
 }
-
-
 
 .centro {
     background-color: rgba(0, 0, 0, 0.788);
@@ -65,4 +66,32 @@ h3 {
     color: rgb(255, 255, 255);
     margin-left: 82%; 
     margin-top: -4.3%;
+}
+
+caption{
+    font-weight: 600;
+}
+.card-border-primary-subtle{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    
+}
+h1 {
+    font-weight: 500;
+    
+}
+
+.card-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+.selectors-row{ 
+    padding: 10px;
+}
+#mychart{
+    display: flex;
 }
