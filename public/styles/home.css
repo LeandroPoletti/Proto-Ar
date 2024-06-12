@@ -92,6 +92,10 @@ h1 {
 .selectors-row{ 
     padding: 10px;
 }
-#mychart{
+.resumo{
+    width: 100%;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }

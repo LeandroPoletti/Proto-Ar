@@ -25,20 +25,44 @@
       </button>
     </div>
     <div class="selectors-row">
-      <div class="col-sm-4 pt-5">
-        <div class="card border-primary-subtle ">
-          <div class="card-title">
-            <h1>Lotes</h1>
-            <ul class="list-group list-group- flush">
-              <ol class="list-group-item list-group-item-action"><label class="container-fluid" for="1"> ID xy mais problemas </label></ol>
-              <ol class="list-group-item list-group-item-action"><label class="container-fluid" for="1"> DATA xy foi dia mais tranquilo</label></ol>
-              <ol class="list-group-item list-group-item-action"><label class="container-fluid" for="1">roupa xy com mais  problema</label></ol>
-            </ul>
+      <div class="resumo">
+        <div class="col-sm-4 pt-5">
+          <div class="card border-primary-subtle ">
+            <div class="card-title">
+              <h1>Lotes</h1>
+              <ul class="list-group list-group- flush">
+                <ol class="list-group-item list-group-item-action"><label class="container-fluid" for="1"> ID xy mais problemas </label></ol>
+                <ol class="list-group-item list-group-item-action"><label class="container-fluid" for="1"> DATA xy foi dia mais tranquilo</label></ol>
+                <ol class="list-group-item list-group-item-action"><label class="container-fluid" for="1">roupa xy com mais  problema</label></ol>
+              </ul>
+            </div>
           </div>
         </div>
-    </div>
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+      </div>
+      
      <!--GRAFICO EM JS-->
-     <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    
+      
+  <div class="container-fluid pt-5">
+    <table class="table table-bordered table-striped table-hover caption-top table-responsive">
+      <caption>Lista de ocorrencias</caption>
+      <thead>
+        <tr class="grafico">
+          <th scope="col">ID</th>
+          <th scope="col">Data ocorrencia</th>
+          <th scope="col">Nome dispositivo</th>
+          <th scope="col">Ultima manutenção</th>
+          <th scope="col">ID lote</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider" style="border-top-color: --bs-body-color;">
+        <!-- Filled with js code -->
+      </tbody>
+    </table>
+  </div>
+  
+
   <script>
     var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
     var yValues = [55, 49, 44, 24, 15];
@@ -62,25 +86,6 @@
       }
     });
     </script>
-    
-      
-  <div class="container-fluid pt-5">
-    <table class="table table-bordered table-striped table-hover caption-top table-responsive">
-      <caption>Lista de ocorrencias</caption>
-      <thead>
-        <tr class="grafico">
-          <th scope="col">ID</th>
-          <th scope="col">Data ocorrencia</th>
-          <th scope="col">Nome dispositivo</th>
-          <th scope="col">Ultima manutenção</th>
-          <th scope="col">ID lote</th>
-        </tr>
-      </thead>
-      <tbody class="table-group-divider" style="border-top-color: --bs-body-color;">
-        <!-- Filled with js code -->
-      </tbody>
-    </table>
-  </div>
   
 </body>
 </html>
